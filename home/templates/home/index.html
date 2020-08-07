@@ -1,10 +1,64 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-    <div class="row h-100">
-        <div class="col-12 h-100 my-auto">
-             <h1> The United States of Sports </h1>
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
         </div>
     </div>
+{% endblock %}
+
+{% block content %}
+<div class="container nav-color h-100">
+    <div class="row h-100">
+        <div class="col-12  my-auto">
+             <h1 class="logo"> The United States of Sports </h1>
+        </div>
+        <div class="col-12 my-auto">
+             <p>
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             blah blah blah blah blah blah blah blah blah blah
+             </p>
+        </div>
+        <div class="col-12 my-auto">
+            <ul class="nav nav-justified">
+                <li class="nav-item dropdown">
+                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        NFL
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        NBA
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        MLB
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        NHL
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        MLS
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
 {% endblock %}

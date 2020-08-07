@@ -36,7 +36,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-lock" aria-hidden="true"></i>Account
+                            <i class="fa fa-lock" aria-hidden="true"></i> Account
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
@@ -52,10 +52,23 @@
                             </div>
                         </li>
                         <li class="nav-item "> 
-                            <a class="nav-link logo" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Basket</a>
+                            <a class="nav-link logo" href="#">
+                            <div>
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i> Basket
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                         $0.00
+                                    {% endif %}
+                                 </p>
+                            </div>
+                            </a>
                         </li>
                     </ul>
 
+    {% block page_header %}
+    {% endblock %}
     
     {% block content %}
     {% endblock %}

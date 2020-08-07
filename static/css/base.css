@@ -1,3 +1,7 @@
+body {
+    color:#fafafa;
+}
+
 .hero {
 	position: relative;
 	width: 100%;
@@ -7,14 +11,23 @@
 	background-attachment: fixed;
 }
 
+.header-container {
+    padding-top: 164px;
+}
+
 .nav-color {
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-item {
+   margin-top: 10px;
 }
 
 .logo {
     font-weight: 800;
     text-transform: uppercase;
     color:#fafafa;
+    text-align: center;
 }
 
 .logo:hover {
