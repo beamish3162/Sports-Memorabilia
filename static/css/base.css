@@ -1,8 +1,23 @@
-#hero {
+.hero {
 	position: relative;
 	width: 100%;
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("https://www.portagewi.gov/wp-content/uploads/2019/06/american-flag.jpg");
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("https://www.portagewi.gov/wp-content/uploads/2019/06/american-flag.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+}
+
+.nav-color {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-weight: 800;
+    text-transform: uppercase;
+    color:#fafafa;
+}
+
+.logo:hover {
+    color:#fafafa;
+    text-decoration: none;
 }
