@@ -30,31 +30,13 @@
         </div>
         <div class="col-12 my-auto">
             <ul class="nav nav-justified">
-                <li class="nav-item dropdown">
+                {% for League in Leagues %}
+                <li class="nav-item">
                     <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        NFL
+                        {{ League.name }}
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        NBA
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        MLB
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        NHL
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        MLS
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
             
         </div>

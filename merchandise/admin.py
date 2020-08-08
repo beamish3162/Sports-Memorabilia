@@ -34,6 +34,7 @@ class TeamAdmin(admin.ModelAdmin):
         'image'
     )
 
+
 admin.site.register(Merchandise, MerchandiseAdmin)
 admin.site.register(League, LeagueAdmin)
 admin.site.register(Team, TeamAdmin)
