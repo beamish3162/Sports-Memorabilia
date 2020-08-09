@@ -1,16 +1,14 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Team, Merchandise
+from .models import Merchandise
 
 
-def team_merchandise(request, team_id):
-    """ A view to show individual team pages """
+def merchandise_detail(request, merchandise_id):
+    """ A view to show individual merchandise pages """
 
-    merchandises = Merchandise.objects.all()
-    team = get_object_or_404(Team, pk=team_id)
+    merchandise = get_object_or_404(Merchandise, pk=merchandise_id)
 
     context = {
-        'team': team,
-        'merchandises': merchandises
+        'merchandise': merchandise,
     }
 
-    return render(request, 'merchandise/team_merchandise.html', context)
+    return render(request, 'merchandise/merchandise_detail.html', context)

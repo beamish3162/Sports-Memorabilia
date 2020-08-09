@@ -39,8 +39,18 @@ body {
 /*---team page --- */
 
 .team-background {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+    background-color:#fafafa;
+    border: 2px solid black;
     border-radius: 10px;
+}
+
+.merch-image {
+    width: 150px;
+    height: 150px;
+}
+
+.team-font {
+    color: black;
+    text-align: center;
 }
