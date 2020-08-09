@@ -6,5 +6,17 @@
 {% endblock %}
        
 {% block content %}
-<h1> Aloha {{ merchandise.name }}</h1>
+
+            <div class="container">
+                    <div class=" merch-row merchandise-background ">
+                        <h5 class="team-font">{{ merchandise.name }}</h5>
+                        <div class="image-container my-5">
+                            <img class="merch-image" src="{{ merchandise.image_url }}" alt="{{ merchandise.name }}">
+                        </div>
+                        <p class="team-font container"> {{ merchandise.description }}</p>
+                        <p class="team-font">${{ merchandise.price }}</p>     
+                    </div>  
+            </div>
+    
+
 {% endblock %}

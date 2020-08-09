@@ -1,7 +1,3 @@
-body {
-    color:#fafafa;
-}
-
 .hero {
 	position: relative;
 	width: 100%;
@@ -45,12 +41,36 @@ body {
     border-radius: 10px;
 }
 
-.merch-image {
-    width: 150px;
-    height: 150px;
+.team-image {
+    width: 100%;
+    height: 100%;
 }
 
 .team-font {
-    color: black;
     text-align: center;
+}
+
+.header-font {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.merch-row {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+/*---merdchanidse-page--*/
+
+.merchandise-background {
+	width: 100%;
+    background-color:#fafafa;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.merch-image {
+    margin-right: 10px;
+    width: 50%;
+    height: 50%;
 }
