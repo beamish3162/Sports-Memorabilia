@@ -10,7 +10,7 @@ class League(models.Model):
 
 
 class Team(models.Model):
-    league = models.ForeignKey('League', null=True, blank=True, on_delete=models.SET_NULL)
+    division = models.ForeignKey('League', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     nickname = models.CharField(max_length=254)
     image_url = models.URLField(max_length=1024, null=True, blank=True)

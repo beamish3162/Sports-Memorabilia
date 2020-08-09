@@ -29,7 +29,7 @@ class LeagueAdmin(admin.ModelAdmin):
 class TeamAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        'league',
+        'division',
         'nickname',
         'image'
     )

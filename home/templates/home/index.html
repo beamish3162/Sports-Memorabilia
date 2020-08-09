@@ -35,6 +35,13 @@
                     <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ League.name }}
                     </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% for team in teams %}
+                                  {% if team.division == League %}
+                                    <a href="#" class="dropdown-item">{{ team.name }} {{ team.nickname }}</a>
+                                  {% endif %}
+                                {% endfor %}
+                            </div>
                 </li>
                 {% endfor %}
             </ul>

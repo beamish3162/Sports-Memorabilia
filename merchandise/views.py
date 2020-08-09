@@ -1,15 +1,17 @@
 from django.shortcuts import render
-from .models import Team
+from .models import Team, League
 
-# Create your views here.
 
-def all_Teams(request):
+def all_leagues(request):
     """ A view to show all products, including sorting and search queries """
 
-    teams = teams.objects.all()
+    teams = Team.objects.all()
+    Leagues = League.objects.all()
 
     context = {
         'teams': teams,
+        'Leagues': Leagues
     }
 
-    return render(request, 'merch/.html', context)
+    return render(request, 'merchandise/league.html', context)
+
