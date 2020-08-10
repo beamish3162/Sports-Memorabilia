@@ -29,8 +29,8 @@
                             <a class="logo" href="{% url 'home' %}"><h1 class="logo">United States of Sports</h1></a>
                         </li>
                         <li class="nav-item">
-                            <form class="form-inline my-2 my-lg-0" method="GET" action="">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'merchandise_search' %}">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="q" aria-label="Search">
                                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                             </form>
                         </li>

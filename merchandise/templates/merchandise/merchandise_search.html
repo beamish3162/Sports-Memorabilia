@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+       
+{% block content %}
+
+            
+
+        <div class="container">
+            <div class=" merch-row merchandise-background ">
+                <div class="col-12 merch-row">
+                    <h1 class="header-font" >
+                         Find what you where looking for?
+                    </h1>
+                </div>
+                <div class="row justify-content-around">
+                    {% for merchandise in merchandises %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 team-background  merch-row ">
+                        <h5 class="team-font">{{ merchandise.name }}</h5>
+                        <div class="image-container my-5">
+                        <a href="{% url 'merchandise_detail' merchandise.id %}">
+                            <img class="team-image" src="{{ merchandise.image_url }}" alt="{{ merchandise.name }}">
+                        </a>
+                        </div>
+                        <p class="team-font"> {{ merchandise.name }}</p>
+                        <p class="team-font">${{ merchandise.price }}</p>     
+                    </div>           
+                    {% endfor %}
+                </div>  
+            </div>
+        </div>
+    
+{% endblock %}

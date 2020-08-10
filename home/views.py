@@ -21,7 +21,6 @@ def team_merchandise(request, team_id):
 
     merchandises = Merchandise.objects.all()
     team = get_object_or_404(Team, pk=team_id)
-
     context = {
         'team': team,
         'merchandises': merchandises
