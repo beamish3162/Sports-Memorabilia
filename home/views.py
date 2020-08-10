@@ -21,9 +21,15 @@ def team_merchandise(request, team_id):
 
     merchandises = Merchandise.objects.all()
     team = get_object_or_404(Team, pk=team_id)
+    # signed = None
+
+    # if request.GET:
+    #     if 'signed' in request.GET:
+    #         signed = Merchandise.objects.filter(signed=True)
     context = {
         'team': team,
-        'merchandises': merchandises
+        'merchandises': merchandises,
+        # 'is_signed': signed
     }
 
     return render(request, 'home/team_merchandise.html', context)

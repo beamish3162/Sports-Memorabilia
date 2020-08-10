@@ -6,8 +6,6 @@
        
 {% block content %}
 
-            
-
             <div class="container" style=" background:url({{ team.image_url }}); 
                                            background-repeat: no-repeat;
                                            background-size: cover;
@@ -16,6 +14,14 @@
                     <h1 class="header-font" >
                         Hello {{ team.name }} {{ team.nickname }}'s Fans!
                     </h1>
+                    <!-- <div class="nav-item dropdown">
+                        <a class="font-weight-bold nav-link mr-5" href="#" id="merchandise-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="merchandise-link">
+                            <a href="{% url 'team_merchandise' team.id %}?signed=True" class="dropdown-item">Signed</a>
+                        </div>
+                    </div> -->
                 </div>
                 <div class="row justify-content-around">
                     {% for merchandise in merchandises %}

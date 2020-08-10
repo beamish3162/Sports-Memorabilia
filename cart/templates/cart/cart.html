@@ -11,4 +11,34 @@
 
 {% block content %}
 
+<div class="container">
+    <div class=" merch-row merchandise-background ">
+         <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="header-font mb-4">Shopping Cart</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% if cart_items %}
+                    <div class="table-responsive rounded">
+                        {{ cart_items }}
+                    </div>
+                {% else %}
+                    <p class="lead mb-5">Your cart is empty.</p>
+                    <a href="#" value="Go back!" onclick="history.back()" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="header-font">Keep Shopping</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
