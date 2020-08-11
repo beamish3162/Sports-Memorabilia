@@ -15,7 +15,7 @@
         <div class="col-12  my-auto">
              <h1 class="logo"> The United States of Sports </h1>
         </div>
-        <div class="col-12 my-auto">
+        <div class="col-12 my-auto home-font">
              <p>
              blah blah blah blah blah blah blah blah blah blah
              blah blah blah blah blah blah blah blah blah blah
@@ -33,12 +33,12 @@
                 {% for League in Leagues %}
                 <li class="nav-item">
                     <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ League.name }}
+                        <i class="{{ League.font_awesome }}">{{ League.name }}</i>
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% for team in teams %}
                                   {% if team.division == League %}
-                                    <a href="{% url 'team_merchandise' team.id %}" class="dropdown-item">{{ team.name }} {{ team.nickname }}</a>
+                                    <a href="{% url 'team_merchandise' team.id %}" class="dropdown-item team-font">{{ team.name }} {{ team.nickname }}</a>
                                   {% endif %}
                                 {% endfor %}
                             </div>

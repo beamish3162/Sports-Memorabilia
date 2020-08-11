@@ -25,6 +25,7 @@ class MerchandiseAdmin(admin.ModelAdmin):
 class LeagueAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'font_awesome'
     )
 
 

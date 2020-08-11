@@ -5,6 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class League(models.Model):
 
     name = models.CharField(max_length=254)
+    font_awesome = models.CharField(max_length=254, default='fas fa-football-ball')
 
     def __str__(self):
         return self.name

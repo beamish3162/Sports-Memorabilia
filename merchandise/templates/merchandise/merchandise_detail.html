@@ -9,10 +9,11 @@
 
             <div class="container">
                     <div class=" merch-row merchandise-background ">
+
                         <h5 class="team-font">{{ merchandise.name }}</h5>
-                        <div class="image-container my-5">
+                        <a class="image-info" href="{% url 'merchandise_detail' merchandise.id %}">
                             <img class="merch-image" src="{{ merchandise.image_url }}" alt="{{ merchandise.name }}">
-                        </div>
+                        </a>
                         <p class="team-font container"> {{ merchandise.description }}</p>
                         <p class="team-font">${{ merchandise.price }}</p>
                         <p class="team-font">Stock left: {{ merchandise.stock }}</p>
@@ -29,11 +30,10 @@
                             </div>
 
                             <div class="col-12">
-                                <a href="#"  value="Go back!" onclick="history.back()"  class="btn rounded-0 mt-5">
+                                <a href="{% url 'team_merchandise' merchandise.team.id %}"    class="btn btn-danger btn-lg rounded-0 mt-5">
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn rounded-0 text-uppercase mt-5" value="Add to Cart">
-                                <i class="fas fa-cart-plus"></i>
+                                <input type="submit" class="btn btn-danger btn-lg rounded-0 text-uppercase mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
