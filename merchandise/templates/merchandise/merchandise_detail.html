@@ -15,14 +15,25 @@
                         </div>
                         <p class="team-font container"> {{ merchandise.description }}</p>
                         <p class="team-font">${{ merchandise.price }}</p>
+                        <p class="team-font">Stock left: {{ merchandise.stock }}</p>
                         <form class="form" action="{% url 'add_to_cart' merchandise.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
+                            <div class="col-12">
+                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <div class="form-group w-50">
+                                    <div class="input-group">
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="{{ merchandise.stock }}" data-item_id="{{ merchandise.id }}" id="id_qty_{{ merchandise.id }}">
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-12">
                                 <a href="#"  value="Go back!" onclick="history.back()"  class="btn rounded-0 mt-5">
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
                                 <input type="submit" class="btn rounded-0 text-uppercase mt-5" value="Add to Cart">
+                                <i class="fas fa-cart-plus"></i>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

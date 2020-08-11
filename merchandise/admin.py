@@ -16,6 +16,7 @@ class MerchandiseAdmin(admin.ModelAdmin):
         'price',
         'description',
         'image',
+        'stock',
     )
 
     ordering = ('sku',)

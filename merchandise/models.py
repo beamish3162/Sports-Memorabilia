@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class League(models.Model):
@@ -31,6 +32,9 @@ class Merchandise(models.Model):
     signed = models.BooleanField(default=False, null=True, blank=False)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    stock = models.IntegerField(validators=[MinValueValidator(1),
+                                MaxValueValidator(100)], default=1,
+                                null=True, blank=True)
 
     def __str__(self):
         return self.name
