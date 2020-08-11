@@ -33,17 +33,24 @@
                             </a>
                             </div></li>
                             <li>
-                            <div class="form update-form" method="POST" action="">
+                            <form  method="POST" action="{% url 'update_cart' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.merchandise.stock }}" data-item_id="{{ item.merchandise.id }}" id="id_qty_{{ merchandise.id }}">
+                                        <button type="submit">Update</button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                             </li>
                             <li><p class="team-font">${{ item.merchandise.price }}</p> </li>
-                        </ul>    
+                            <li>
+                                <form method="POST" action="{% url 'delete_item' item.item_id %}">
+                                {% csrf_token %}
+                                    <input type="submit" value="remove" />
+                                </form>
+                            </li>
+                        </ul>  
                     </div>  
                     {% endfor %}
             <div class="col-12">
@@ -73,6 +80,5 @@
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
