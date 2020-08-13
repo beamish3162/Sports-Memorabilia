@@ -21,15 +21,27 @@ def team_merchandise(request, team_id):
 
     merchandises = Merchandise.objects.all()
     team = get_object_or_404(Team, pk=team_id)
-    # signed = None
+    sort = None
+    direction = None
 
-    # if request.GET:
-    #     if 'signed' in request.GET:
-    #         signed = Merchandise.objects.filter(signed=True)
+    if request.GET:
+        if 'signed' in request.GET:
+            merchandises = Merchandise.objects.filter(signed=True)
+        if 'game_used' in request.GET:
+            merchandises = Merchandise.objects.filter(game_used=True)
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            merchandises = merchandises.order_by(sortkey)
+    current_sorting = f'{sort}_{direction}'
     context = {
         'team': team,
         'merchandises': merchandises,
-        # 'is_signed': signed
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'home/team_merchandise.html', context)
