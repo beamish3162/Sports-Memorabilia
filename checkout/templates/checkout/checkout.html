@@ -9,9 +9,68 @@
 
             <div class="container">
                     <div class=" merch-row merchandise-background ">
-                        <div class="row">
-                        
-                        </div>                        
+                        <form action="{% url 'checkout' %}" method="POST">
+                            <div class="row">                            
+                                <div class="col-sm-12 col-md-6">
+                                    <fieldset>
+                                        <legend class="header-font">Details</legend>
+                                        {{ order_form.full_name | as_crispy_field }}
+                                        {{ order_form.email | as_crispy_field }}
+                                        <legend class="header-font">Address info</legend>
+                                        {{ order_form.phone_number | as_crispy_field }}
+                                        {{ order_form.country | as_crispy_field }}
+                                        {{ order_form.postcode | as_crispy_field }}
+                                        {{ order_form.town_or_city | as_crispy_field }}
+                                        {{ order_form.street_address1 | as_crispy_field }}
+                                        {{ order_form.street_address2 | as_crispy_field }}
+                                        {{ order_form.county | as_crispy_field }}
+                                    </fieldset>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <fieldset>
+                                        <legend class="header-font">Payment</legend>
+                                        <!-- Stripe stuff-->
+                                        <div class="mb-3" id="card-element"></div>
+
+                                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                                    </fieldset>
+                                </div>                                
+                            </div>
+                            <div class="row">
+                                <div class="submit-button col-sm-12 col-md-6">                    
+                                    <a href="{% url 'view_cart' %}" class="btn btn-danger">
+                                        <span class="icon">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </span>
+                                        <span class="font-weight-bold">Double Check your order?</span>
+                                    </a>
+                                     <button id="submit-button" class="btn btn-danger">
+                                        <span class="font-weight-bold">Complete Order</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </button>
+                                    <p class="small text-danger my-0">
+                                        <span class="icon">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </span>
+                                        <span>
+                                            Your card will be charged 
+                                            <p class="my-0"> Total: ${{ total | floatformat:2 }}</p>
+                                            <p class="my-0">Delivery: ${{ delivery | floatformat:2 }}</p>
+                                            <p class="my-0">
+                                              <strong>
+                                                Grand Total: ${{ grand_total | floatformat:2 }}
+                                               </strong>
+                                             </p>
+                                            </span>
+                                    </p>
+                                 </div>
+                                 <div class="col-sm-12 col-md-6">
+
+                                 </div>
+                            </div> 
+                        </form>                       
                     </div> 
                     
             </div>

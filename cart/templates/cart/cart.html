@@ -70,7 +70,7 @@
                     </span>
                     <span class="text-uppercase">Keep Shopping</span>
                 </a>
-                <a href="" class="btn  rounded-0 btn-lg">
+                <a href="{% url 'checkout' %}" class="btn  rounded-0 btn-lg">
                     <span class="text-uppercase">Secure Checkout</span>
                     <span class="icon">
                         <i class="fas fa-lock"></i>
@@ -79,6 +79,7 @@
             </div>
              
                 {% else %}
+                <div class="col-6 merch-row d-flex justify-content-center ">
                     <p class="lead mb-5">Your cart is empty.</p>
                     <a href="{% url 'home' %}"   class="btn btn-danger btn-lg rounded-0 btn-lg">
                         <span class="icon">
@@ -86,6 +87,7 @@
                         </span>
                         <span class="header-font">Keep Shopping</span>
                     </a>
+                </div>
                 {% endif %}
             </div>
         </div>
