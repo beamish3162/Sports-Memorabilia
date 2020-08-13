@@ -1,5 +1,5 @@
 from django.shortcuts import render, reverse, redirect
-from django.contrib import message
+from django.contrib import messages
 
 from .forms import OrderForm
 # Create your views here.
@@ -8,7 +8,7 @@ from .forms import OrderForm
 def checkout(request):
     cart = request.seesions.get('cart', {})
     if not cart:
-        message.erro(request, "cart is empty!")
+        messages.erro(request, "cart is empty!")
         return redirect(reverse('home'))
 
     order_form = OrderForm()
