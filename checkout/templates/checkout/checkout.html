@@ -20,6 +20,18 @@
                                         {{ order_form.full_name | as_crispy_field }}
                                         {{ order_form.email | as_crispy_field }}
                                     </fieldset>
+                                     <div class="form-check form-check-inlinecol-12 merch-row">
+                                        <h4 class="header-font">Profile Management</h4>
+                                        {% if user.is_authenticated %}
+                                            <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                                        {% else %}
+                                            <label class="form-check-label" for="id-save-info">
+                                                <a class="btn btn-danger" href="{% url 'account_signup' %}">Create an account</a> or 
+                                                <a class="btn btn-danger" href="{% url 'account_login' %}">login</a> to save this information
+                                            </label>
+                                        {% endif %}
+                                    </div>
                                     <p class="small text-danger my-0">
                                         <span class="icon">
                                             <i class="fas fa-exclamation-circle"></i>
