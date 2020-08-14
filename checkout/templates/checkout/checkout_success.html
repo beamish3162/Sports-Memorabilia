@@ -10,9 +10,53 @@
             <div class="container">
                 <div class=" merch-row merchandise-background ">
                     <div class="col-12 merch-row">
-                        
-                    </div> 
-                </div>
+                        <div class="col-sm-12">
+                            <div class="col">
+                                <hr>
+                                <h2 class="header-font">Order Summary</h2>
+                                <hr>
+                               <p class="team-font">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 team-background team-info">
+                                    <h6 class="team-font">Order number: {{ order.order_number }}</h6>
+                                    <p class="mb-0">Date: {{ order.date }}</p>    
+                                    {% for item in order.lineitems.all %} 
+                                    <hr> 
+                                    <p class="team-font">{{ item.merchandise.name }}</p>
+                                    <p class="team-font">${{ item.merchandise.price }}</p> 
+                                    <p class="team-font"> No. purchased {{ item.quantity }}</p> 
+                                    <hr>
+                                    {% endfor %}
+                            </div>
+                            <div class="col-md-6 col-sm-12 team-background team-info">
+                                <p class="team-font">{{ order.full_name }}</p>
+                                <p class="team-font">{{ order.street_address1 }}</p>
+                                {% if order.street_address2 %}
+                                <p class="team-font">{{ order.street_address2 }}</p>
+                                {% endif %}
+                                {% if order.county %}
+                                <p class="team-font">{{ order.county }}</p>
+                                {% endif %}
+                                <p class="team-font">{{ order.town_or_city }}</p>
+                                {% if order.postcode %}
+                                <p class="team-font">{{ order.postcode }}</p>
+                                {% endif %}
+                                <p class="team-font">{{ order.country }}</p>
+                                <p class="team-font">{{ order.phone_number }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="header-font">Thanks for Shopping!</h2>
+                        <div class="col-12 merch-row">
+                            <a href="{% url 'home' %}" class="btn  btn image-info rounded-0 btn-lg">
+                                <span class="text-uppercase btn-lg btn-danger ">Keep Shopping</span>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
             </div>
     
 

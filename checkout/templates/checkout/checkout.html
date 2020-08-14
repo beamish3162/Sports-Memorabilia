@@ -20,7 +20,7 @@
                                         {{ order_form.full_name | as_crispy_field }}
                                         {{ order_form.email | as_crispy_field }}
                                     </fieldset>
-                                     <div class="form-check form-check-inlinecol-12 merch-row">
+                                     <div class="form-check form-check-inline col-12 merch-row">
                                         <h4 class="header-font">Profile Management</h4>
                                         {% if user.is_authenticated %}
                                             <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
@@ -59,6 +59,8 @@
                                             {{ order_form.street_address2 | as_crispy_field }}
                                             {{ order_form.county | as_crispy_field }}
                                         <legend class="header-font">Payment</legend>
+                                    </fieldset>
+                                    <fieldset>
                                         <!-- Stripe stuff-->
                                         <div class="mb-3 stripe-border" id="card-element"></div>
 

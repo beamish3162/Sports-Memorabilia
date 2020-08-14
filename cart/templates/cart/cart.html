@@ -25,34 +25,37 @@
         <div class="row">
                 {% if cart_items %}
                     {% for item in cart_items %}
-                    <div class="col-6 merch-row d-flex justify-content-center ">
-                        <ul>
-                            <li><h5 class="team-font">{{ item.merchandise.name }}</h5></li>
-                            <li><div class="image-container my-5">
-                            <a href="{% url 'merchandise_detail' item.merchandise.id %}">
-                                <img class="cart-image" src="{{ item.merchandise.image_url }}" alt="{{ item.merchandise.name }}">
-                            </a>
-                            </div></li>
-                            <li>
-                            <form  method="POST" action="{% url 'update_cart' item.item_id %}">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.merchandise.stock }}" data-item_id="{{ item.merchandise.id }}" id="id_qty_{{ merchandise.id }}">
-                                        <button class="btn-danger btn-lg" type="submit">Update</button>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="col-12 team-background team-info merch-row">
+                            <ul>
+                                <li><h5 class="team-font">{{ item.merchandise.name }}</h5></li>
+                                <li><div class="image-container my-5">
+                                <a href="{% url 'merchandise_detail' item.merchandise.id %}">
+                                    <img class="cart-image" src="{{ item.merchandise.image_url }}" alt="{{ item.merchandise.name }}">
+                                </a>
+                                </div></li>
+                                <li>
+                                <form  method="POST" action="{% url 'update_cart' item.item_id %}">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.merchandise.stock }}" data-item_id="{{ item.merchandise.id }}" id="id_qty_{{ merchandise.id }}">
+                                            <button class="btn-danger btn-lg" type="submit">Update</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                            </li>
-                            <li><p class="team-font">${{ item.merchandise.price | calc_subtotal:item.quantity }}</p> </li>
-                            <li>
-                                <form method="POST" action="{% url 'delete_item' item.item_id %}">
-                                {% csrf_token %}
-                                    <input type="submit" class="btn-danger btn-lg" value="remove" />
                                 </form>
-                            </li>
-                        </ul>  
+                                </li>
+                                <li><p class="team-font">${{ item.merchandise.price | calc_subtotal:item.quantity }}</p> </li>
+                                <li>
+                                    <form method="POST" action="{% url 'delete_item' item.item_id %}">
+                                    {% csrf_token %}
+                                        <input type="submit" class="btn-danger btn-lg" value="remove" />
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>  
                     </div>  
+                    {% endfor %}
                     <div class="col-12 header-font">
                         <h4 class="header-font">
                             {% if grand_total %}
@@ -62,19 +65,12 @@
                                     {% endif %}
                         </h4>
                     </div>
-                    {% endfor %}
-            <div class="col-12">
-                <a href="#" value="Go back!" onclick="history.back()" class="btn-danger btn-lg btn  rounded-0 btn-lg">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Shopping</span>
+            <div class="col-12 merch-row">
+                <a href="{% url 'home' %}" class="btn  btn image-info rounded-0 btn-lg">
+                    <span class="text-uppercase btn-lg btn-danger ">Keep Shopping</span>
                 </a>
-                <a href="{% url 'checkout' %}" class="btn  rounded-0 btn-lg">
-                    <span class="text-uppercase">Secure Checkout</span>
-                    <span class="icon">
-                        <i class="fas fa-lock"></i>
-                    </span>
+                <a href="{% url 'checkout' %}" class="btn image-info rounded-0 btn-lg">
+                    <span class="btn-danger btn-lg text-uppercase">Secure Checkout</span>
                 </a>
             </div>
              
