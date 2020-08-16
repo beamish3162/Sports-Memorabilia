@@ -19,9 +19,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-12 team-background team-info">
-                                    <h6 class="team-font">Order number: {{ order.order_number }}</h6>
-                                    <p class="mb-0">Date: {{ order.date }}</p>    
+                            <div class="col-md-6 col-sm-12 team-background team-info mt-5">
+                                    <h6 class="team-font mt-5"><strong>Order number:</strong> {{ order.order_number }}</h6>
+                                    <p class="mb-0"><strong>Date:</strong> {{ order.date }}</p>    
                                     {% for item in order.lineitems.all %} 
                                     <hr> 
                                     <p class="team-font">{{ item.merchandise.name }}</p>
@@ -30,8 +30,9 @@
                                     <hr>
                                     {% endfor %}
                             </div>
-                            <div class="col-md-6 col-sm-12 team-background team-info">
-                                <p class="team-font">{{ order.full_name }}</p>
+                            <div class="col-md-6 col-sm-12 team-background team-info mt-5">
+                                <h3 class="team-font mt-5">Billing Address</h3>
+                                <p class="team-font mt-5">{{ order.full_name }}</p>
                                 <p class="team-font">{{ order.street_address1 }}</p>
                                 {% if order.street_address2 %}
                                 <p class="team-font">{{ order.street_address2 }}</p>

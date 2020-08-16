@@ -22,13 +22,13 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
                 {% if cart_items %}
                     {% for item in cart_items %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="col-12 team-background team-info merch-row">
-                            <ul>
-                                <li><h5 class="team-font">{{ item.merchandise.name }}</h5></li>
+                            <ul class="cart-list">
+                                <li><h5 class="team-font mt-5 merch-name">{{ item.merchandise.name }}</h5></li>
                                 <li><div class="image-container my-5">
                                 <a href="{% url 'merchandise_detail' item.merchandise.id %}">
                                     <img class="cart-image" src="{{ item.merchandise.image_url }}" alt="{{ item.merchandise.name }}">
@@ -40,8 +40,8 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.merchandise.stock }}" data-item_id="{{ item.merchandise.id }}" id="id_qty_{{ merchandise.id }}">
-                                            <button class="btn-danger btn-lg" type="submit">Update</button>
                                         </div>
+                                        <button class="button-general btn mt-5 btn-lg" type="submit">Update</button>
                                     </div>
                                 </form>
                                 </li>
@@ -49,7 +49,7 @@
                                 <li>
                                     <form method="POST" action="{% url 'delete_item' item.item_id %}">
                                     {% csrf_token %}
-                                        <input type="submit" class="btn-danger btn-lg" value="remove" />
+                                        <input type="submit" class="button-general btn btn-lg" value="remove" />
                                     </form>
                                 </li>
                             </ul>
@@ -67,17 +67,17 @@
                     </div>
             <div class="col-12 merch-row">
                 <a href="{% url 'home' %}" class="btn  btn image-info rounded-0 btn-lg">
-                    <span class="text-uppercase btn-lg btn-danger ">Keep Shopping</span>
+                    <span class="text-uppercase btn-lg btn  button-general ">Keep Shopping</span>
                 </a>
                 <a href="{% url 'checkout' %}" class="btn image-info rounded-0 btn-lg">
-                    <span class="btn-danger btn-lg text-uppercase">Secure Checkout</span>
+                    <span class="btn button-general btn-lg text-uppercase">Secure Checkout</span>
                 </a>
             </div>
              
                 {% else %}
                 <div class="col-6 merch-row d-flex justify-content-center ">
                     <p class="lead mb-5">Your cart is empty.</p>
-                    <a href="{% url 'home' %}"   class="btn btn-danger btn-lg rounded-0 btn-lg">
+                    <a href="{% url 'home' %}"   class="btn  button-general btn-lg rounded-0 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>

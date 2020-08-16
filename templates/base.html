@@ -31,24 +31,24 @@
                         </li>
                         <li class="nav-item">
                             <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'merchandise_search' %}">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="q" aria-label="Search">
-                                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                                <input class="form-control mr-sm-2 home-font" type="text" placeholder="Search" name="q" aria-label="Search">
+                                <button class="btn button-general my-2 my-sm-0" type="submit">Search</button>
                             </form>
                         </li>
                         <li class="nav-item dropdown">
                             <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-lock" aria-hidden="true"></i> Account
                             </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <div class="dropdown-menu border-1" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="#" class="dropdown-item">Product Management</a>
+                                        <a href="#" class="team-font dropdown-item">Product Management</a>
                                     {% endif %}
                                     <a href="#" class="dropdown-item">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    <a href="{% url 'account_logout' %}" class="team-font dropdown-item">Logout</a>
                                 {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    <a href="{% url 'account_signup' %}" class="team-font dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="team-font dropdown-item">Login</a>
                                 {% endif %}
                             </div>
                         </li>

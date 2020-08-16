@@ -10,26 +10,27 @@
                                            background-repeat: no-repeat;
                                            background-size: cover;
                                            border-radius: 10px; background-attachment: flex; ">  
-                <div class="col-12 merch-row">
-                    <h1 class="header-font" >
+                <div class="col-12 merch-row ">
+                    <h1 class=" banner p-2 rounded-1" >
                         Hello {{ team.name }} {{ team.nickname }}'s Fans!
                     </h1>
-                    <div class="row">
-                        <div class="col-6">
+                </div>
+                    <div class="row mb-5 mt-5  justify-content-center" >
+                        <div class="col-2">
                             <div class="nav-item dropdown">
                                 <a class="filter-link nav-link mr-5" href="#" id="merchandise-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Filter
                                 </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="merchandise-link">
-                                    <a href="{% url 'team_merchandise' team.id %}" class="dropdown-item">all</a>
-                                    <a href="{% url 'team_merchandise' team.id %}?signed=True" class="dropdown-item">Signed</a>
-                                    <a href="{% url 'team_merchandise' team.id %}?game_used=True" class="dropdown-item">Game Used</a>
+                                <div class="dropdown-menu border-1" aria-labelledby="merchandise-link">
+                                    <a href="{% url 'team_merchandise' team.id %}" class="dropdown-item filter-link">all</a>
+                                    <a href="{% url 'team_merchandise' team.id %}?signed=True" class="dropdown-item filter-link">Signed</a>
+                                    <a href="{% url 'team_merchandise' team.id %}?game_used=True" class="dropdown-item filter-link">Game Used</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
                             <div class="sort-select-wrapper w-50">
-                                <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <select id="sort-selector" class="custom-select filter-link custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}> Sort by... </option>
                                     <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}> Price (low to high) </option>
                                     <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}> Price (high to low) </option>  
@@ -37,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
                 <div class="row">
                     <hr>
                     {% for merchandise in merchandises %}
@@ -56,8 +57,8 @@
                         {% endif %}
                     {% endfor %}
                 <div class="col-12 image-info merch-row">
-                    <a href="{% url 'home' %}" class="btn btn-danger btn-lg rounded-0 mt-5">
-                        <span class="text-uppercase">Home</span>
+                    <a href="{% url 'home' %}" class="btn button-general btn-lg mb-5 mt-5">
+                        HOME
                     </a>
                 </div>  
             </div>

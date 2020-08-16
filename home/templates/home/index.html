@@ -10,32 +10,27 @@
 {% endblock %}
 
 {% block content %}
-<div class="container nav-color h-100">
-    <div class="row h-100">
-        <div class="col-12  my-auto">
-             <h1 class="logo"> The United States of Sports </h1>
+<div class="container team-background h-100">
+    <div class="row justify-content-center h-100">
+        <div class="col-12 banner logo my-auto">
+             <h1 class="  mt-5"> The United States of Sports </h1>
         </div>
-        <div class="col-12 my-auto home-font">
-             <p>
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
-             blah blah blah blah blah blah blah blah blah blah
+        <div class="col-12 my-auto mt-5 team-font">
+             <p class="mt-5">
+                Whether searching for a baseball autographed by your favorite World Series slugger, a signed football by an iconic Hall of Famer, or the jersey of world 
+                famous soccer star, you've come to the right place! Merchandise from nearly every professional sports league, team, and players! Not only will you find your next prized sports 
+                possession with ease thanks to superb customer service, and tremendous site experience, you'll have the satisfaction and peace of mind that every product 
+                listed comes complete with a certificate of authenticity.
              </p>
         </div>
-        <div class="col-12 my-auto">
+        <div class="col-12 mb-5 mt-5">
             <ul class="nav nav-justified">
                 {% for League in Leagues %}
                 <li class="nav-item">
                     <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="{{ League.font_awesome }}">{{ League.name }}</i>
+                        <i class="button-general p-2 {{ League.font_awesome }}">{{ League.name }}</i>
                     </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    <div class="dropdown-menu border-1 " aria-labelledby="user-options">
                                 {% for team in teams %}
                                   {% if team.division == League %}
                                     <a href="{% url 'team_merchandise' team.id %}" class="dropdown-item team-font">{{ team.name }} {{ team.nickname }}</a>

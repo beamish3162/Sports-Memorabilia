@@ -1,4 +1,7 @@
 /*---base.html---*/
+body {
+    overflow-x: 100%;
+}
 
 .hero {
 	position: relative;
@@ -26,7 +29,8 @@
     text-transform: uppercase;
     color:#fafafa;
     text-align: center;
-    font-family: Chivo, sans-serif;
+    font-family: Special Elite, sans-serif;
+    text-shadow: -1px -1px 0 #2f3648, 1px -1px 0 #2f3648, -1px 1px 0 #2f3648, 1px 1px 0 #2f3648;
 }
 
 .logo:hover {
@@ -37,6 +41,26 @@
 .home-font {
     color: #fafafa;
     font-family: Special Elite;
+}
+
+.league-icon {
+    font-weight: 800;
+    text-transform: uppercase;
+    color:black;
+    text-align: center;
+    font-family: Chivo, sans-serif;
+}
+
+.league-icon:hover {
+    color: black;
+    text-decoration: none;
+} 
+
+.banner {
+    background-color: #b22026;
+    color: #fafafa;
+    font-family: Special Elite;
+    text-align: center;
 }
 
 
@@ -110,10 +134,21 @@
 /*---cart page---*/
 
 .cart-image {
-    height: 300px;
+    height: 250px;
     width: 200px
 }
 
+.quantitiy-update {
+    display: block;
+}
+
+.cart-list {
+    list-style-type: none;
+}
+
+.merch-name {
+    min-height: 100px;
+}
 
 /*---stripe page----*/
 
@@ -165,4 +200,19 @@
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+
+/*---buttons ---*/
+
+.button-general {
+    background-color: #b22026;
+    border-radius: 10px;
+    color: #fafafa;
+    font-family: Special Elite;
+    border: 2px solid #2f3648;
+}
+
+.button-general:hover {
+    color: #fafafa;
 }
