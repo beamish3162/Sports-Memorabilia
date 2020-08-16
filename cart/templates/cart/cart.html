@@ -75,13 +75,15 @@
             </div>
              
                 {% else %}
-                <div class="col-6 merch-row d-flex justify-content-center ">
-                    <p class="lead mb-5">Your cart is empty.</p>
-                    <a href="{% url 'home' %}"   class="btn  button-general btn-lg rounded-0 btn-lg">
+                <div class="col-12 merch-row d-flex justify-content-center ">
+                    <h2 class="team-font mb-5">Your cart is empty.</h2>
+                </div>
+                <div class="col-12 merch-row d-flex justify-content-center">
+                    <a href="{% url 'home' %}"   class="btn button-general btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="header-font">Keep Shopping</span>
+                        <span class="team-font">Keep Shopping</span>
                     </a>
                 </div>
                 {% endif %}
