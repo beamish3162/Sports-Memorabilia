@@ -19,19 +19,16 @@
                                         <legend class="header-font">Details</legend>
                                         {{ order_form.full_name | as_crispy_field }}
                                         {{ order_form.email | as_crispy_field }}
+                                        {{ order_form.phone_number | as_crispy_field }}
                                     </fieldset>
-                                     <div class="form-check form-check-inline col-12 merch-row">
-                                        <h4 class="header-font">Profile Management</h4>
-                                        {% if user.is_authenticated %}
-                                            <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-                                        {% else %}
-                                            <label class="form-check-label" for="id-save-info">
-                                                <a class="btn btn-danger" href="{% url 'account_signup' %}">Create an account</a> or 
-                                                <a class="btn btn-danger" href="{% url 'account_login' %}">login</a> to save this information
-                                            </label>
-                                        {% endif %}
-                                    </div>
+                                    <fieldset>
+                                    <legend class="header-font">Payment</legend>
+                                        <!-- Stripe stuff-->
+                                        <div class="mb-3 stripe-border" id="card-element"></div>
+
+                                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                                    </fieldset>
+                                    
                                     <p class="small text-danger my-0">
                                         <span class="icon">
                                             <i class="fas fa-exclamation-circle"></i>
@@ -51,25 +48,31 @@
                                 <div class="col-sm-12 col-md-6">
                                     <fieldset>
                                             <legend class="header-font">Address info</legend>
-                                            {{ order_form.phone_number | as_crispy_field }}
                                             {{ order_form.country | as_crispy_field }}
                                             {{ order_form.postcode | as_crispy_field }}
                                             {{ order_form.town_or_city | as_crispy_field }}
                                             {{ order_form.street_address1 | as_crispy_field }}
                                             {{ order_form.street_address2 | as_crispy_field }}
                                             {{ order_form.county | as_crispy_field }}
-                                        <legend class="header-font">Payment</legend>
+                                        
+                                        <div class="form-check form-check-inline col-12 merch-row">
+                                            <h4 class="header-font">Profile Management</h4>
+                                            {% if user.is_authenticated %}
+                                                <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                                            {% else %}
+                                                <label class="form-check-label" for="id-save-info">
+                                                    <a class="btn btn-danger" href="{% url 'account_signup' %}">Create an account</a> or 
+                                                    <a class="btn btn-danger" href="{% url 'account_login' %}">login</a> to save this information
+                                                </label>
+                                            {% endif %}
+                                        </div>
                                     </fieldset>
-                                    <fieldset>
-                                        <!-- Stripe stuff-->
-                                        <div class="mb-3 stripe-border" id="card-element"></div>
-
-                                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                                    </fieldset>
+                                    
                                 </div>                                
                             </div>
                             <div class="row">
-                                <div class="submit-button col-sm-12 col-md-6">                    
+                                <div class=" col-sm-12 col-md-6">                    
                                     <a href="{% url 'view_cart' %}" class="btn btn-danger">
                                         <span class="icon">
                                             <i class="fa fa-shopping-cart"></i>

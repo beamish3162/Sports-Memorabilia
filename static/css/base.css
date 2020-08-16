@@ -82,6 +82,16 @@
     margin-top: 50px;
 }
 
+.filter-link {
+    font-family: Special Elite;
+    color: black;
+}
+
+.filter-link:hover {
+    text-decoration: none;
+    color: black;
+}
+
 /*---merdchanidse-page--*/
 
 .merchandise-background {
