@@ -1,18 +1,21 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404, HttpResponse
+from django.shortcuts import render, reverse
+from django.shortcuts import redirect, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from cart.contexts import cart_content
 from merchandise.models import Merchandise
+from cart.contexts import cart_content
+
+
 import stripe
 import json
 
 
 @require_POST
-def saving_checkout_info(request):
+def cache_checkout_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -34,7 +37,7 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-       
+
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -60,10 +63,6 @@ def checkout(request):
                         )
                         order_line_item.save()
                 except Merchandise.DoesNotExist:
-                    messages.error(request, (
-                        "We couldn't find one of the items in our database. \
-                        Please call us for assistance!")
-                    )
                     order.delete()
                     return redirect(reverse('view_cart'))
 
@@ -75,7 +74,6 @@ def checkout(request):
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.erro(request, "cart is empty!")
             return redirect(reverse('home'))
 
         current_cart = cart_content(request)

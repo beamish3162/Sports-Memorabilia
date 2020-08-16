@@ -28,7 +28,6 @@ def update_cart(request, item_id):
     """ update to cart """
 
     quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
     if quantity > 0:
