@@ -154,18 +154,6 @@ else:
     }
 
 
-# if 'DATABASE_URL' in os.environ:
-#     DATABASES = {
-#         'default': dj_database_url.parse('postgres://ksasnuooazokbw:62d4fa1ef4f8584632b429138359f040ed864370ec25a77014fa3be73d6651f4@ec2-3-248-4-172.eu-west-1.compute.amazonaws.com:5432/dadar2sd842ln7')
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': BASE_DIR / 'db.sqlite3',
-#         }
-#     }
-
 
 
 # Password validation
