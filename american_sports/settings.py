@@ -27,7 +27,7 @@ SECRET_KEY = '*yg-op3z+j_$+bo+_o3y4tfq79h+#^(j)jrc7$#oz7d8659od='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['united-states-of-sports', 'localhost']
+ALLOWED_HOSTS = ['united-states-of-sports.herokuapp.com', 'localhost']
 
 
 # Application definition
