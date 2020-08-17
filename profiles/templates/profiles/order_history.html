@@ -19,15 +19,17 @@
                     </div>
                     <div class="col-12 justify-content-center">
                         {% for order in orders %}
-                            <h6 class="team-font mt-5"><strong>Order number:</strong> {{ order.order_number }}</h6>
-                            <p class="team-font mb-2"><strong>Date:</strong> {{ order.date }}</p>   
-                            {% for item in order.lineitems.all %}
-                                <p class="team-font">
-                                    {{ item.merchandise.name }} x{{ item.quantity }}
-                                </p>
-                            {% endfor %}
-                            <h3 class="team-font mb-5">Grand Total: <br>{{ order.grand_total }}</h3>
-                                <hr>
+                            {% if order.user == profile %}
+                                <h6 class="team-font mt-5"><strong>Order number:</strong> {{ order.order_number }}</h6>
+                                <p class="team-font mb-2"><strong>Date:</strong> {{ order.date }}</p>   
+                                {% for item in order.lineitems.all %}
+                                    <p class="team-font">
+                                        {{ item.merchandise.name }} x{{ item.quantity }}
+                                    </p>
+                                {% endfor %}
+                                <h3 class="team-font mb-5">Grand Total: <br>{{ order.grand_total }}</h3>
+                                    <hr>
+                            {% endif %}
                         {% endfor %}
                     </div>
                     <div class="col-12 merch-row  image-info">

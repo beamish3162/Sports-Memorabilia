@@ -28,9 +28,11 @@
                                 {{ form.default_street_address1 | as_crispy_field }}
                                 {{ form.default_street_address2 | as_crispy_field }}
                                 {{ form.default_county | as_crispy_field }}
+                        <legend class="header-font">Personal Info</legend>
+                                {{ form.default_phone_number | as_crispy_field }}
                                 {{ form.team | as_crispy_field }}
                                  <button class="btn button-general text-uppercase float-center">Update Information</button>
-                                </fieldset>
+                        </fieldset>
                         </form>
                     </div>
                     <div class="col-12 merch-row  image-info">

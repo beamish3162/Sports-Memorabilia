@@ -8,7 +8,7 @@
 
 {% block inner_content %}
 
-<h1 class="header-font">{% trans "Sign In" %}</h1>
+<h1 class="banner">{% trans "Sign In" %}</h1>
 
 {% get_providers as socialaccount_providers %}
 
@@ -34,7 +34,6 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <a class="button-general btn-lg" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<div class="row justify-content-center">
     
     <form class="login" method="POST" action="{% url 'account_login' %}">
      {% csrf_token %}
@@ -49,6 +48,5 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
         <button class="primaryAction button-general  mb-5" type="submit">{% trans "Sign In" %}</button>
     </div>
     </form>
-</div>
 
 {% endblock %}
