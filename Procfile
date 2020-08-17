@@ -1,0 +1,1 @@
+web: gunicorn american_sports.wsgi:application

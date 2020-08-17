@@ -42,7 +42,7 @@
                             <div class="dropdown-menu border-1" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="#" class="team-font dropdown-item">Product Management</a>
+                                        <a href="{% url 'admin:index' %}" class="team-font dropdown-item">Product Management</a>
                                     {% endif %}
                                     <a href="{% url 'user_profile' %}" class="dropdown-item team-font">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="team-font dropdown-item">Logout</a>
