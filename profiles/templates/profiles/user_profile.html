@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+       
+{% block content %}
+
+            <div class="container" style=" background:url({{ UserProfile.team.image_url }}); 
+                                           background-repeat: no-repeat;
+                                           background-size: cover;
+                                           border-radius: 10px; background-attachment: flex; ">  
+                <div class=" merch-row merchandise-background ">
+                    <div class="col-12 merch-row banner">
+                        <hr>
+                        <h2 class="header-font">Profile</h2>
+                        <h3 class="header-font">Welcome {{ profile }}</h3> 
+                    </div>
+                    <div class="col-12 justify-content-center">
+                        <form method="POST" action="{% url 'user_profile' %}" id=User-info>
+                        {% csrf_token %}
+                        <fieldset>
+                        <legend class="header-font">Address info</legend>
+                                {{ form.default_country | as_crispy_field }}
+                                {{ form.default_postcode | as_crispy_field }}
+                                {{ form.default_town_or_city | as_crispy_field }}
+                                {{ form.default_street_address1 | as_crispy_field }}
+                                {{ form.default_street_address2 | as_crispy_field }}
+                                {{ form.default_county | as_crispy_field }}
+                                {{ form.team | as_crispy_field }}
+                                 <button class="btn button-general text-uppercase float-center">Update Information</button>
+                                </fieldset>
+                        </form>
+                    </div>
+                    <div class="col-12 merch-row  image-info">
+                        <a href="{% url 'home' %}" class="btn button-general btn-lg mb-5 mt-5">
+                            HOME
+                        </a>
+                        <a href="{% url 'order_history' %}" class="btn button-general btn-lg mb-5 mt-5">
+                            Order History
+                        </a>
+                    </div>
+                </div> 
+            </div>
+    
+
+{% endblock %}

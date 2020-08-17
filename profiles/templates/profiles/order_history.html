@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+       
+{% block content %}
+
+            <div class="container" style=" background:url({{ UserProfile.team.image_url }}); 
+                                           background-repeat: no-repeat;
+                                           background-size: cover;
+                                           border-radius: 10px; background-attachment: flex; ">  
+                <div class=" merch-row merchandise-background ">
+                    <div class="col-12 merch-row banner">
+                        <hr>
+                        <h2 class="header-font">Profile</h2>
+                        <h3 class="header-font">Welcome {{ profile }}</h3> 
+                    </div>
+                    <div class="col-12 justify-content-center">
+                        {% for order in orders %}
+                            <h6 class="team-font mt-5"><strong>Order number:</strong> {{ order.order_number }}</h6>
+                            <p class="team-font mb-2"><strong>Date:</strong> {{ order.date }}</p>   
+                            {% for item in order.lineitems.all %}
+                                <p class="team-font">
+                                    {{ item.merchandise.name }} x{{ item.quantity }}
+                                </p>
+                            {% endfor %}
+                            <h3 class="team-font mb-5">Grand Total: <br>{{ order.grand_total }}</h3>
+                                <hr>
+                        {% endfor %}
+                    </div>
+                    <div class="col-12 merch-row  image-info">
+                        <a href="{% url 'home' %}" class="btn button-general btn-lg mb-5 mt-5">
+                            Home
+                        </a>
+                        <a href="{% url 'user_profile' %}" class="btn button-general btn-lg mb-5 mt-5">
+                            profile
+                        </a>
+                    </div>
+                </div> 
+            </div>
+    
+
+{% endblock %}
