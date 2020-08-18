@@ -93,6 +93,13 @@ body {
     border-radius: 10px;
 }
 
+.team-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    background-attachment: flex;
+}
+
 .team-info {
     min-height: 450px;
     text-align:center;

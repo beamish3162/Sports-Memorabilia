@@ -6,10 +6,7 @@
        
 {% block content %}
 
-            <div class="container p-0" style=" background:url({{ team.image_url }}); 
-                                           background-repeat: no-repeat;
-                                           background-size: cover;
-                                           border-radius: 10px; background-attachment: flex; ">  
+            <div class="container p-0 team-container" style=" background:url({{ team.image_url }});">  
                 <div class="col-12 merch-row banner ">
                     <h1 class=" p-2 rounded-1" >
                         Hello {{ team.name }} {{ team.nickname }}'s Fans!
@@ -77,7 +74,7 @@
 {% block postloadjs %}
     {{ block.super }}
     <!--this javascript is for the sorting by price feature-->
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);
