@@ -1,8 +1,4 @@
 /*---base.html---*/
-body {
-    overflow-x: 100%;
-}
-
 .hero {
 	position: relative;
 	width: 100%;
@@ -17,7 +13,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px; 
-    background-attachment: flex; 
 }
 
 .header-container {
@@ -97,7 +92,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    background-attachment: flex;
 }
 
 .team-info {

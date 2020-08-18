@@ -47,4 +47,3 @@ def team_merchandise(request, team_id):
     }
 
     return render(request, 'home/team_merchandise.html', context)
-
