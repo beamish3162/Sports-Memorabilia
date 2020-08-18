@@ -20,15 +20,15 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-sm-12 team-background team-info mt-5">
-                                    <h6 class="team-font mt-5"><strong>Order number:</strong> {{ order.order_number }}</h6>
-                                    <p class="mb-0"><strong>Date:</strong> {{ order.date }}</p>    
-                                    {% for item in order.lineitems.all %} 
-                                    <hr> 
-                                    <p class="team-font">{{ item.merchandise.name }}</p>
-                                    <p class="team-font">${{ item.merchandise.price }}</p> 
-                                    <p class="team-font"> No. purchased {{ item.quantity }}</p> 
-                                    <hr>
-                                    {% endfor %}
+                                <h6 class="team-font mt-5"><strong>Order number:</strong> {{ order.order_number }}</h6>
+                                <p class="mb-0"><strong>Date:</strong> {{ order.date }}</p>    
+                                {% for item in order.lineitems.all %} 
+                                <hr> 
+                                <p class="team-font">{{ item.merchandise.name }}</p>
+                                <p class="team-font">${{ item.merchandise.price }}</p> 
+                                <p class="team-font"> No. purchased {{ item.quantity }}</p> 
+                                <hr>
+                                {% endfor %}
                             </div>
                             <div class="col-md-6 col-sm-12 team-background team-info mt-5">
                                 <h3 class="team-font mt-5">Billing Address</h3>
@@ -53,7 +53,7 @@
                         <h2 class="header-font">Thanks for Shopping!</h2>
                         <div class="col-12 merch-row">
                             <a href="{% url 'home' %}" class="btn  btn image-info rounded-0 btn-lg">
-                                <span class="text-uppercase btn-lg btn-danger ">Keep Shopping</span>
+                                <span class="text-uppercase btn-lg button-general">Keep Shopping</span>
                             </a>
                         </div>
                     </div>
