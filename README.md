@@ -1,39 +1,89 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Intro and Strategy
 
-Welcome David  Beamish,
+# User Stories
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## Story 1
 
-## Gitpod Reminders
+### a)
+![home page](./media/home-page.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### b)
+![team page](./media/team-page.png)
 
-`python3 -m http.server`
+### ci)
+![merch-page1](./media/merch-page1.png)
+### cii)
+![merch-page2](./media/merch-page2.png)
 
-A blue button should appear to click: *Make Public*,
+### d)
+![cart-page](./media/cart-page.png)
 
-Another blue button should appear to click: *Open Browser*.
+### e)
+![checkout](./media/checkout.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### f)
+![order success](./media/order.png)
 
-A blue button should appear to click: *Make Public*,
+## Story 2
 
-Another blue button should appear to click: *Open Browser*.
+### a)
+![register](./media/signup-page.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+### b)
+![profile](./media/profile-page.png)
 
-## Updates Since The Instructional Video
+# Scope
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+# Structure
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## The Database Structure
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Merchandise
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![merchandise](./media/merchandise.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Teams and Leagues
 
---------
+### User Profiles and Orders 
 
-Happy coding!
+# Skeleton 
+
+[index page](./media/wireframe-index.png)
+
+[team page](./media/wireframe-team.png.png)
+
+[merch page](./media/wireframe-individual-merch.png)
+
+# Surface
+
+# Features
+
+## Future Features
+
+# Technologies 
+
+1) Bootstrap
+
+2) Stripe
+
+3) Css
+
+4) Html
+
+5) Javascript
+ 
+6) Python
+
+7) Django
+
+8) AWS
+
+# Testing
+
+# Deployment
+
+# Credits
+
+# Acknowledgements
+
+# Media
