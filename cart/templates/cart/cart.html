@@ -21,7 +21,7 @@
                 <hr>
             </div>
         </div>
-
+        <!--Will display cart items similar format to the items of merchandise on team-merchandise page-->
         <div class="row justify-content-center">
                 {% if cart_items %}
                     {% for item in cart_items %}
@@ -35,6 +35,7 @@
                                 </a>
                                 </div></li>
                                 <li>
+                                <!--for updating qunatity for amount of items wanted-->
                                 <form  method="POST" action="{% url 'update_cart' item.item_id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
@@ -47,6 +48,7 @@
                                 </li>
                                 <li><p class="team-font">${{ item.merchandise.price | calc_subtotal:item.quantity }}</p> </li>
                                 <li>
+                                    <!--Form for remving item all together-->
                                     <form method="POST" action="{% url 'delete_item' item.item_id %}">
                                     {% csrf_token %}
                                         <input type="submit" class="button-general btn btn-lg" value="remove" />
@@ -65,6 +67,7 @@
                                     {% endif %}
                         </h4>
                     </div>
+            <!--buttons fro nav-->
             <div class="col-12 merch-row">
                 <a href="{% url 'home' %}" class="btn  btn image-info rounded-0 btn-lg">
                     <span class="text-uppercase btn-lg btn  button-general ">Keep Shopping</span>
@@ -73,7 +76,7 @@
                     <span class="btn button-general btn-lg text-uppercase">Secure Checkout</span>
                 </a>
             </div>
-             
+                <!--If no items in cart-->
                 {% else %}
                 <div class="col-12 merch-row d-flex justify-content-center ">
                     <h2 class="team-font mb-5">Your cart is empty.</h2>

@@ -34,14 +34,3 @@ def cart_content(request):
     }
 
     return context
-
-
-
-# merchandise = get_object_or_404(Merchandise, pk=item_id)
-#         total += quantity * merchandise.price
-#         merchandise_count += quantity
-#         cart_items.append({
-#             'item_id': item_id,
-#             'quantity': quantity,
-#             'merchandise': merchandise,
-#         })
