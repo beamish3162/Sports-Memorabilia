@@ -15,7 +15,7 @@
                         <h3 class="header-font">Welcome {{ profile }}</h3> 
                     </div>
                     <div class="col-12 justify-content-center">
-                        <form method="POST" action="{% url 'user_profile' %}" id=User-info>
+                        <form method="POST" action="{% url 'user_profile' %}" id="User-info">
                         {% csrf_token %}
                         <fieldset>
                         <legend class="header-font">Address info</legend>
