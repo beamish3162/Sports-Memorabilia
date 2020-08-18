@@ -9,7 +9,7 @@
 
             <div class="container">
                     <div class=" merch-row merchandise-background ">
-
+                        <!--displays Image for item along with details-->
                         <h2 class="banner header-font pt-2">{{ merchandise.name }}</h2>
                         <a class="image-info" href="{% url 'merchandise_detail' merchandise.id %}">
                             <img class="merch-image" src="{{ merchandise.image_url }}" alt="{{ merchandise.name }}">
@@ -17,10 +17,12 @@
                         <p class="team-font container"> {{ merchandise.description }}</p>
                         <p class="team-font">${{ merchandise.price }}</p>
                         <p class="team-font">Stock left: {{ merchandise.stock }}</p>
+                        <!--form is sued to add to cart-->
                         <form class="form" action="{% url 'add_to_cart' merchandise.id %}" method="POST">
                         {% csrf_token %}
                             <div class="form-row">
                                 <div class="col-12">
+                                    <!--Used to add the intented quantity cant go above product stock-->
                                     <p class="mt-3"><strong>Quantity:</strong></p>
                                     <div class="form-group w-50">
                                         <div class="input-group">
@@ -30,9 +32,11 @@
                                 </div>
 
                                 <div class="col-12">
+                                    <!--button for gonig back to back to team page-->
                                     <a href="{% url 'team_merchandise' merchandise.team.id %}"    class="btn button-general btn-lg mb-5 mt-5">
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
+                                    <!--button for gonig back to submit form-->
                                     <input type="submit" class="btn button-general btn-lg text-uppercase mb-5 mt-5" value="Add to Cart">
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">

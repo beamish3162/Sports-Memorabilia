@@ -24,13 +24,15 @@
              </p>
         </div>
         <div class="col-12 mb-5 mt-5">
+        <!--list of leageus with corrisponding font-awesome icon for nav-->
             <ul class="nav nav-justified">
                 {% for League in Leagues %}
                 <li class="nav-item">
                     <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="button-general p-2 {{ League.font_awesome }}">{{ League.name }}</i>
+                        <i class="button-general p-2 {{ League.font_awesome }}">  {{ League.name }}</i>
                     </a>
-                    <div class="dropdown-menu border-1 " aria-labelledby="user-options">
+                    <!--Scrollable dropdown of teams realted to whichever league is above-->
+                    <div class="dropdown-menu border-1 scrollable-menu" aria-labelledby="user-options">
                                 {% for team in teams %}
                                   {% if team.division == League %}
                                     <a href="{% url 'team_merchandise' team.id %}" class="dropdown-item team-font">{{ team.name }} {{ team.nickname }}</a>

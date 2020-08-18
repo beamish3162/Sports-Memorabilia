@@ -64,14 +64,14 @@ def checkout(request):
                         )
                         order_line_item.save()
                 except Merchandise.DoesNotExist:
-                    order.delete()
-                    return redirect(reverse('view_cart'))
+                    # dont want to delete entire order
+                    order_line_item.delete()
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
-            messages.error(request, 'Hmm somethings not right. \
-                Please double check your information.')
+            return redirect(reverse('view_cart'))
     else:
         cart = request.session.get('cart', {})
         if not cart:
@@ -104,7 +104,7 @@ def checkout(request):
                 order_form = OrderForm()
         else:
             order_form = OrderForm()
-    
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
@@ -122,7 +122,7 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
+        # connect  profile to the order
         order.user = profile
         order.save()
 
@@ -150,5 +150,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
 

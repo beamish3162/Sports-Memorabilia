@@ -23,25 +23,27 @@
 
     <title>United States of Sports</title>
   </head>
-  <body class="hero">
-                    
+  <body class="hero">                   
                 <ul class="nav nav-color nav-fill">
                         <li class="nav-item">
                             <a class="logo" href="{% url 'home' %}"><h1 class="logo">United States of Sports</h1></a>
                         </li>
+                        <!--search bar-->
                         <li class="nav-item">
                             <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'merchandise_search' %}">
                                 <input class="form-control mr-sm-2 home-font" type="text" placeholder="Search" name="q" aria-label="Search">
                                 <button class="btn button-general my-2 my-sm-0" type="submit">Search</button>
                             </form>
                         </li>
+                        <!--For users to access profiles-->
                         <li class="nav-item dropdown">
                             <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-lock" aria-hidden="true"></i> Account
+                            <i class="fas fa-user-circle" aria-hidden="true"></i> Account
                             </a>
                             <div class="dropdown-menu border-1" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
+                                    <!--only available to superuser to access admin page-->
                                         <a href="{% url 'admin:index' %}" class="team-font dropdown-item">Product Management</a>
                                     {% endif %}
                                     <a href="{% url 'user_profile' %}" class="dropdown-item team-font">My Profile</a>
@@ -52,6 +54,7 @@
                                 {% endif %}
                             </div>
                         </li>
+                        <!--access the shopping cart and displaying current shopping cart-->
                         <li class="nav-item "> 
                             <a class="nav-link logo" href="{% url 'view_cart' %}">
                             <div>

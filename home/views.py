@@ -21,6 +21,7 @@ def team_merchandise(request, team_id):
 
     merchandises = Merchandise.objects.all()
     team = get_object_or_404(Team, pk=team_id)
+    merch = Merchandise.objects.filter(team=team)
     sort = None
     direction = None
 
@@ -42,6 +43,7 @@ def team_merchandise(request, team_id):
         'team': team,
         'merchandises': merchandises,
         'current_sorting': current_sorting,
+        'merch': merch
     }
 
     return render(request, 'home/team_merchandise.html', context)

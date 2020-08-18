@@ -7,7 +7,7 @@
 {% block inner_content %}
 <h1 class="banner">{% trans "Sign Out" %}</h1>
 
-<p class="team-font">{% trans 'Are you sure you want to sign out?' %}</p>
+<p class="team-font">{{ user }} {% trans 'are you sure you want to sign out?' %}</p>
 
 <div class="row justify-content-center">
     <form method="post" action="{% url 'account_logout' %}">

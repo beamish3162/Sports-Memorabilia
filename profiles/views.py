@@ -6,13 +6,14 @@ from .forms import UserForm
 
 
 def user_profile(request):
+    # for profile view for specific user
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
         form = UserForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
 
-    form= UserForm(instance=profile)
+    form = UserForm(instance=profile)
     context = {
         'profile': profile,
         'form': form,
@@ -21,11 +22,12 @@ def user_profile(request):
 
 
 def order_history(request,):
+    # for order history view for specific user
     orders = Order.objects.all()
     profile = get_object_or_404(UserProfile, user=request.user)
     user_orders = profile.orders.all()
     context = {
-        'profile':profile,
+        'profile': profile,
         'orders': orders,
         'user_orders': user_orders
     }

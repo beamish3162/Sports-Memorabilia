@@ -7,10 +7,7 @@
        
 {% block content %}
 
-            <div class="container" style=" background:url({{ UserProfile.team.image_url }}); 
-                                           background-repeat: no-repeat;
-                                           background-size: cover;
-                                           border-radius: 10px; background-attachment: flex; ">  
+            <div class="container" >  
                 <div class=" merch-row merchandise-background ">
                     <div class="col-12 merch-row banner">
                         <hr>
@@ -30,7 +27,6 @@
                                 {{ form.default_county | as_crispy_field }}
                         <legend class="header-font">Personal Info</legend>
                                 {{ form.default_phone_number | as_crispy_field }}
-                                {{ form.team | as_crispy_field }}
                                  <button class="btn button-general text-uppercase float-center">Update Information</button>
                         </fieldset>
                         </form>

@@ -6,7 +6,7 @@
        
 {% block content %}
 
-            <div class="container" style=" background:url({{ team.image_url }}); 
+            <div class="container p-0" style=" background:url({{ team.image_url }}); 
                                            background-repeat: no-repeat;
                                            background-size: cover;
                                            border-radius: 10px; background-attachment: flex; ">  
@@ -15,8 +15,9 @@
                         Hello {{ team.name }} {{ team.nickname }}'s Fans!
                     </h1>
                 </div>
-                    <div class="row mb-5 mt-5  justify-content-left" >
+                    <div class="row mb-5 mt-5  justify-content-left p-2" >
                         <div class="col-2">
+                            <!--Filter for signed and game used items related to team-->
                             <div class="nav-item dropdown">
                                 <a class="filter-link nav-link mr-5" href="#" id="merchandise-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Filter
@@ -27,6 +28,7 @@
                                     <a href="{% url 'team_merchandise' team.id %}?game_used=True" class="dropdown-item filter-link">Game Used</a>
                                 </div>
                             </div>
+                            <!--to sort goods by price related to team-->
                             <div class="sort-select-wrapper w-50">
                                 <select id="sort-selector" class=" filter-link border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}> Sort by... </option>
@@ -36,8 +38,14 @@
                             </div>
                         </div>
                     </div>
-                
+                <!--Incase there is no merchandise in store related to item-->
                 <div class="row justify-content-center">
+                {% if merch|length == 0 %}
+                    <div class="col-10 team-background">
+                        <h1 class=" team-font">Sorry we dont have any merchandise related to to {{ team.name }} {{ team.nickname }}! Please try again another time. </h1>
+                    </div>
+                {% else %}
+                <!--a display for merchandise in store related to item-->
                     {% for merchandise in merchandises %}
                         {% if merchandise.team == team %}
                             <div class="col-sm-12 col-md-6 col-lg-4">
@@ -53,6 +61,8 @@
                             </div>
                         {% endif %}
                     {% endfor %}
+                {% endif %}
+                <!--button to go home-->
                 <div class="col-12 image-info merch-row">
                     <a href="{% url 'home' %}" class="btn button-general btn-lg mb-5 mt-5">
                         HOME
@@ -64,7 +74,7 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    
+    <!--this javascript is for the sorting by price feature-->
     <script type="text/javascript">
         $('#sort-selector').change(function() {
             var selector = $(this);

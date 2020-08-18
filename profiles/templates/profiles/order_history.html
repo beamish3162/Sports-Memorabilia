@@ -7,16 +7,14 @@
        
 {% block content %}
 
-            <div class="container" style=" background:url({{ UserProfile.team.image_url }}); 
-                                           background-repeat: no-repeat;
-                                           background-size: cover;
-                                           border-radius: 10px; background-attachment: flex; ">  
+            <div class="container">  
                 <div class=" merch-row merchandise-background ">
                     <div class="col-12 merch-row banner">
                         <hr>
                         <h2 class="header-font">Profile</h2>
                         <h3 class="header-font">Welcome {{ profile }}</h3> 
                     </div>
+                    <!--Will list order hsitory with sleect details -->
                     <div class="col-12 justify-content-center">
                         {% for order in orders %}
                             {% if order.user == profile %}
@@ -33,9 +31,11 @@
                         {% endfor %}
                     </div>
                     <div class="col-12 merch-row  image-info">
+                        <!--button for gonig back home-->
                         <a href="{% url 'home' %}" class="btn button-general btn-lg mb-5 mt-5">
                             Home
                         </a>
+                        <!--button for gonig back to profle-->
                         <a href="{% url 'user_profile' %}" class="btn button-general btn-lg mb-5 mt-5">
                             profile
                         </a>
