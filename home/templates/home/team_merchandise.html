@@ -15,7 +15,7 @@
                         Hello {{ team.name }} {{ team.nickname }}'s Fans!
                     </h1>
                 </div>
-                    <div class="row mb-5 mt-5  justify-content-left p-2" >
+                    <div class="row no-gutters mb-5 mt-5  justify-content-left p-2" >
                         <div class="col-2">
                             <!--Filter for signed and game used items related to team-->
                             <div class="nav-item dropdown">
@@ -39,10 +39,12 @@
                         </div>
                     </div>
                 <!--Incase there is no merchandise in store related to item-->
-                <div class="row justify-content-center">
+                <div class="row  no-gutters justify-content-center">
                 {% if merch|length == 0 %}
-                    <div class="col-10 team-background">
+                    <div class="col-12">
+                    <div class=" col-12 team-background">
                         <h1 class=" team-font">Sorry we dont have any merchandise related to to {{ team.name }} {{ team.nickname }}! Please try again another time. </h1>
+                    </div>
                     </div>
                 {% else %}
                 <!--a display for merchandise in store related to item-->

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container ">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -10,12 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="container team-background h-100">
-    <div class="row justify-content-center h-100">
+<div class="container index-hero team-background mt-5">
+    <div class="row justify-content-center">
         <div class="col-12 banner logo my-auto">
              <h1 class="  mt-5"> The United States of Sports </h1>
         </div>
-        <div class="col-12 mt-5 team-font">
+        <div class="col-10 mt-5 team-background team-font">
              <p class="mt-5">
                 Whether searching for a baseball autographed by your favorite World Series slugger, a signed football by an iconic Hall of Famer, or the jersey of world 
                 famous hockey star, you've come to the right place! Merchandise from nearly every professional sports league, team, and players! Not only will you find your next prized sports 
@@ -29,7 +29,7 @@
                 {% for League in Leagues %}
                 <li class="nav-item">
                     <a class=" nav-link logo" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="button-general p-2 {{ League.font_awesome }}">  {{ League.name }}</i>
+                        <i class="league-button p-2 {{ League.font_awesome }}">  {{ League.name }}</i>
                     </a>
                     <!--Scrollable dropdown of teams realted to whichever league is above-->
                     <div class="dropdown-menu border-1 scrollable-menu" aria-labelledby="user-options">

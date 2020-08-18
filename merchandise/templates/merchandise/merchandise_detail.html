@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block page_header %}
 
@@ -17,10 +18,10 @@
                         <p class="team-font container"> {{ merchandise.description }}</p>
                         <p class="team-font">${{ merchandise.price }}</p>
                         <p class="team-font">Stock left: {{ merchandise.stock }}</p>
-                        <!--form is sued to add to cart-->
+                        <!--form is used to add to cart-->
                         <form class="form" action="{% url 'add_to_cart' merchandise.id %}" method="POST">
                         {% csrf_token %}
-                            <div class="form-row">
+                            <div class="form-row ml-5">
                                 <div class="col-12">
                                     <!--Used to add the intented quantity cant go above product stock-->
                                     <p class="mt-3"><strong>Quantity:</strong></p>
@@ -28,16 +29,24 @@
                                         <div class="input-group">
                                             <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="{{ merchandise.stock }}" data-item_id="{{ merchandise.id }}" id="id_qty_{{ merchandise.id }}">
                                         </div>
+                                    
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <!--button for gonig back to back to team page-->
-                                    <a href="{% url 'team_merchandise' merchandise.team.id %}"    class="btn button-general btn-lg mb-5 mt-5">
+                                    <a href="{% url 'team_merchandise' merchandise.team.id %}"  class="btn button-general btn-lg mb-5 mt-5">
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
                                     <!--button for gonig back to submit form-->
-                                    <input type="submit" class="btn button-general btn-lg text-uppercase mb-5 mt-5" value="Add to Cart">
+                                <!-- {% if cart_items %}
+                                    {% if item.item.id == merchandise.id and item.quantity == item.merchandise.stock %}
+                                        <p class="max-stock mt-2">We cant garuntee we will have enough stock!</p>
+                                    {% else %} -->
+
+                                        <input type="submit" class="btn button-general btn-lg text-uppercase mb-5 mt-5" value="Add to Cart">
+                                    <!-- {% endif %}
+                                {% endif %} -->
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>

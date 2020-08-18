@@ -28,7 +28,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="col-12 team-background team-info merch-row">
                             <ul class="cart-list">
-                                <li><h5 class="team-font mt-5 merch-name">{{ item.merchandise.name }}</h5></li>
+                                <li><h5 class="header-font mt-5 merch-name">{{ item.merchandise.name }}</h5></li>
                                 <li><div class="image-container my-5">
                                 <a href="{% url 'merchandise_detail' item.merchandise.id %}">
                                     <img class="cart-image" src="{{ item.merchandise.image_url }}" alt="{{ item.merchandise.name }}">
@@ -42,7 +42,13 @@
                                         <div class="input-group">
                                             <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.merchandise.stock }}" data-item_id="{{ item.merchandise.id }}" id="id_qty_{{ merchandise.id }}">
                                         </div>
-                                        <button class="button-general btn mt-5 btn-lg" type="submit">Update</button>
+                                        {% if item.quantity > item.merchandise.stock %}
+                                        <p class="max-stock mt-2">We cant garuntee we will have enough stock!</p>
+                                        {% elif item.merchandise.stock == 1 %}
+                                        <p class="max-stock mt-2">It's the last one</p>
+                                        {% else %}
+                                        <button class="button-general btn mt-1 btn-lg" type="submit">Update</button>
+                                        {% endif %}
                                     </div>
                                 </form>
                                 </li>

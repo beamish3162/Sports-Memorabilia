@@ -18,9 +18,10 @@
                                <p class="team-font">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row no-gutters">
                             <!--Displays general order summary info-->
                             <div class="col-md-6 col-sm-12 team-background team-info mt-5">
+                                <h3 class="team-font mt-5">Order Details</h3>
                                 <h6 class="team-font mt-5"><strong>Order number:</strong> {{ order.order_number }}</h6>
                                 <p class="mb-0"><strong>Date:</strong> {{ order.date }}</p>    
                                 {% for item in order.lineitems.all %} 
@@ -49,7 +50,6 @@
                                 <p class="team-font">{{ order.country }}</p>
                                 <p class="team-font">{{ order.phone_number }}</p>
                             </div>
-                        </div>
                     </div>
                     <div>
                         <!--thank you message and button for more shopping-->
