@@ -95,7 +95,7 @@
 }
 
 .team-info {
-    min-height: 450px;
+    min-height: 500px;
     text-align:center;
 }
 
@@ -160,6 +160,7 @@
 
 .cart-list {
     list-style-type: none;
+    padding-right: 0px;
 }
 
 .merch-name {
@@ -237,6 +238,15 @@
     border: 2px solid #2f3648;
 }
 
+.home-button {
+    background-color: #b22026;
+    border-radius: 10px;
+    color: #2f3648;
+    font-weight: bolder;
+    font-family: Special Elite;
+    border: 5px solid #fafafa;
+}
+
 .button-general:hover {
     color: #fafafa;
 }
@@ -285,5 +295,10 @@
     font-family: Special Elite;
     border: 2px solid #fafafa;
     font-size: 20px;
+    }
+
+    .team-info {
+        min-height: 0px;
+        text-align:center;
     }
 }
