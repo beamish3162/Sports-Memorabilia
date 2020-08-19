@@ -173,7 +173,8 @@ hoping to add background images on all profile pages of favorite team image as w
 Display, images, and links worked fine on google chrome, firefox, and Microsoft edge. 
 Used W3 validator for CSS and HTML and the pep8.com to check the python was displayed up to 
 standard. On each browser check, we tested on mobile view(iPhone 6/78), iPad view on 
-both rotations, and in general browser view. On Checkout views.py, webhookhandler.py, 
+both rotations, and in general browser view. Only problem is sometimes the images dont load on mobile chrome and firefox,
+although a refresh solves this i didnt know why that was the case On Checkout views.py, webhookhandler.py, 
 webhooks.py, and in setting.py all have one or two lines that are two long according to pep8 but 
 we determined that for readability and functionality that those respective lines would be left as is. 
 
@@ -182,8 +183,8 @@ with the correct response from webhooks and the order, info was successfully sto
 Emails were sent for verification and on payment completion. Multiple practice accounts where setup successfully 
 well with logout, login, password change, and if authorised link to admin all functioning. 
 
-Had a good bit of trouble validating the profile page as it required a login so th evaldator turned up a 500 message. Then when 
-manually entered was giving problems realted to the search bar on the page but managed to fix it.
+Had a good bit of trouble validating the profile page as it required a login so th valedator turned up a 500 message. Then when 
+manually entered was giving problems realted to the search bar on the page but managed to fix it. 
 
 # Deployment
 

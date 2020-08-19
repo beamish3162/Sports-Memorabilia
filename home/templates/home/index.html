@@ -37,7 +37,7 @@
                         <i class="league-button p-2 {{ League.font_awesome }}">  {{ League.name }}</i>
                     </a>
                     <!--Scrollable dropdown of teams realted to whichever league is above-->
-                    <div class="dropdown-menu border-1 scrollable-menu" aria-labelledby="user-options">
+                    <div class="dropdown-menu border-1 dropright scrollable-menu" aria-labelledby="user-options">
                                 {% for team in teams %}
                                   {% if team.division == League %}
                                     <a href="{% url 'team_merchandise' team.id %}" class="dropdown-item team-font">{{ team.name }} {{ team.nickname }}</a>
