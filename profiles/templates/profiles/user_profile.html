@@ -17,15 +17,14 @@
                     <div class="col-12 justify-content-center">
                         <form method="POST" action="{% url 'user_profile' %}" id="User-info">
                         {% csrf_token %}
+                        <h2 class="header-font">Address info</h2>
                         <fieldset>
-                        <legend class="header-font">Address info</legend>
                                 {{ form.default_country | as_crispy_field }}
                                 {{ form.default_postcode | as_crispy_field }}
                                 {{ form.default_town_or_city | as_crispy_field }}
                                 {{ form.default_street_address1 | as_crispy_field }}
                                 {{ form.default_street_address2 | as_crispy_field }}
                                 {{ form.default_county | as_crispy_field }}
-                        <legend class="header-font">Personal Info</legend>
                                 {{ form.default_phone_number | as_crispy_field }}
                                  <button class="btn button-general text-uppercase float-center">Update Information</button>
                         </fieldset>

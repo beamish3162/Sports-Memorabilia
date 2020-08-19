@@ -182,6 +182,8 @@ with the correct response from webhooks and the order, info was successfully sto
 Emails were sent for verification and on payment completion. Multiple practice accounts where setup successfully 
 well with logout, login, password change, and if authorised link to admin all functioning. 
 
+Had a good bit of trouble validating the profile page as it required a login so th evaldator turned up a 500 message. Then when 
+manually entered was giving problems realted to the search bar on the page but managed to fix it.
 
 # Deployment
 
