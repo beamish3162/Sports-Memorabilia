@@ -64,9 +64,19 @@ field will be left null.
 
 ### Merchandise
 
+The Merchandise model as said before is connected to league and team. It also has boolean fields for game-used or if the merchandise is signed which is used for filters. Stock field prevents
+users from entering larger quantity then what is in stock. Name and description fields can be used for search and we've made a custom sku for all merchandise. 
+
 ![merchandise](./media/merchandise.png)
 
 ### Teams and Leagues
+
+Both the league and the team are used as ways of filtering merchanidse aswell as keys for the merchandise to be allocated correctly. In league there is a font-awesome class aswell 
+for display purposes, in the team model nickname and images are fields, the nickname's to differnetiate the different teams from the same city and the images are used as background
+for the team pages. 
+
+![league](./media/league-admin.png)
+![team](./media/team-admin.png)
 
 ### User Profiles and Orders 
 
@@ -74,7 +84,7 @@ field will be left null.
 
 [index page](./media/wireframe-index.png)
 
-[team page](./media/wireframe-team.png.png)
+[team page](./media/wireframe-team.png)
 
 [merch page](./media/wireframe-individual-merch.png)
 
@@ -104,7 +114,24 @@ field will be left null.
 
 # Testing
 
+Display, images and links worked fine on google chrome, firefox and microsoft edge. 
+Used W3 validator for css and html and the pep8.com to check the python was displayed up 
+to standard. On each browser check we tested on mobile view(iphone 6/78), ipad view on 
+both rotations and on general browser view. On Checkout views.py, webhookhandler.py, 
+webhooks.py and in setting.py all have one or two lines that are two long accoridng to pep8 but 
+we determined that for readability and functionality that those respective lines would be left as is. 
+
+
 # Deployment
+
+The project was completed on gitpod and deployed on heroku. To connect our gitpod to heroku we
+first created an app which we called ‘united-states-of-sports’. After this we associate the heroku
+app with our master repository so that we can push our work on to Heroku. For this to work we had
+to first create a Procfile in gitpod which is like an instructor to heroku on which files it needs
+to run the project. 
+
+All static files where stored on AWS in which the s3 bucket was connected through aws-access-key and
+aws-secret-key. 
 
 # Credits
 
