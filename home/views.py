@@ -6,8 +6,8 @@ from merchandise.models import Team, League, Merchandise
 
 def index(request):
 
-    teams = Team.objects.all()
     Leagues = League.objects.all()
+    teams = Team.objects.order_by('name')
 
     context = {
         'teams': teams,

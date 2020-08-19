@@ -46,7 +46,7 @@
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                     <!--only available to superuser to access admin page-->
-                                        <a href="{% url 'admin:index' %}" class="team-font dropdown-item">Product Management</a>
+                                        <a href="{% url 'admin:index' %}" class="team-font dropdown-item">Management</a>
                                     {% endif %}
                                     <a href="{% url 'user_profile' %}" class="dropdown-item team-font">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="team-font dropdown-item">Logout</a>

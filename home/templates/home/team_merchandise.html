@@ -55,6 +55,11 @@
                                     </a>
                                     <p class="team-font">${{ merchandise.price }}</p> 
                                     <p class="team-font">Stock left {{ merchandise.stock }}</p> 
+                                    <div class="col-12 image-info ">
+                                        <a href="{% url 'merchandise_detail' merchandise.id %}" class="btn button-general btn-lg mb-2 mt-2">
+                                            More Details!
+                                        </a>
+                                    </div>  
                                 </div>
                             <hr>
                             </div>
