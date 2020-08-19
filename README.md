@@ -22,7 +22,7 @@
 ![checkout](./media/checkout.png)
 
 ### f)
-![order success](./media/order.png)
+![order success](./media/order-page.png)
 
 ## Story 2
 
